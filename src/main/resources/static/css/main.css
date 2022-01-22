@@ -10,6 +10,10 @@ body {
     color: #A9BC2E;
 }
 
+.error-text {
+    color: #bd2130;
+}
+
 .jumbotron {
     height: 40vh;
     background-image: url("../img/top.jpg");
