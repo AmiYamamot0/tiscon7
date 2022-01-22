@@ -77,11 +77,15 @@ public class EstimateService {
         // 距離当たりの料金を算出する
         int priceForDistance = distanceInt * PRICE_PER_DISTANCE;
 
-        int boxes = getBoxForPackage(dto.getBox(), PackageType.BOX)
+        int boxes = getBoxForPackage(dto.getBox(), PackageType.BOX) //(荷物数, 荷物の種類)
                 + getBoxForPackage(dto.getBed(), PackageType.BED)
                 + getBoxForPackage(dto.getBicycle(), PackageType.BICYCLE)
                 + getBoxForPackage(dto.getWashingMachine(), PackageType.WASHING_MACHINE);
 
+        //段ボールが200個以上だったらエラーを出す
+        if(boxes > 200){
+            boxes = 200;
+        }
         // 箱に応じてトラックの種類が変わり、それに応じて料金が変わるためトラック料金を算出する。
         int pricePerTruck = estimateDAO.getPricePerTruck(boxes);
 
