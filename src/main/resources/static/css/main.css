@@ -6,6 +6,10 @@ body {
     margin: 0;
 }
 
+.asterisk {
+    color: #A9BC2E;
+}
+
 .jumbotron {
     height: 40vh;
     background-image: url("../img/top.jpg");
