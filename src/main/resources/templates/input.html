@@ -63,7 +63,24 @@
         </div>
       </fieldset>
       <fieldset>
-      <div class="sub-title">お荷物情報</div>
+        <div class="sub-title">お荷物情報</div>
+        <div class="caution-box">
+          <div class="caution">※お荷物の合計段ボール数が400個以上の場合は、簡易見積で正しく見積されない場合があります</div>
+          <table>
+            <tr>
+              <th class="table-title">家具</th> <th class="table-title">段ボールに換算した数</th>
+            </tr>
+            <tr>
+              <th class="table-text">ベッド</th> <th class="table-text">20</th>
+            </tr>
+            <tr>
+              <th class="table-text">自転車</th> <th class="table-text">15</th>
+            </tr>
+            <tr>
+              <th class="table-text">洗濯機</th> <th class="table-text">10</th>
+            </tr>
+          </table>
+        </div>
         <div class="form-group">
           <label for="box">段ボールの個数 <span class="asterisk">*</span></label>
           <input type="text" id="box" name="box" th:field="*{box}" class="form-control" value="10" required/>
