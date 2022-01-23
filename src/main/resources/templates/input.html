@@ -28,38 +28,38 @@
         <div class="sub-title">お客様情報</div>
         <div class="form-group">
           <label for="customerName">氏名 <span class="asterisk">*</span></label>
-          <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎"/>
+          <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" required/>
         </div>
         <div class="form-group">
           <label for="tel">連絡先TEL <span class="asterisk">*</span></label>
-          <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678"/>
+          <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678" required/>
         </div>
         <div class="form-group">
           <label for="email">連絡先メールアドレス <span class="asterisk">*</span></label>
-          <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com"/>
+          <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com" required/>
         </div>
         <div class="sub-title">集荷元・お届け先</div>
         <div class="form-group">
           <label for="oldPrefectureId">集荷元住所（都道府県）<span class="asterisk">*</span></label>
           <select id="oldPrefectureId" name="oldPrefectureId" class="form-control">
-            <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{oldPrefectureId}">[[${prefecture.prefectureName}]]</option>
+            <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{oldPrefectureId}" required>[[${prefecture.prefectureName}]]</option>
           </select>
         </div>
         <div class="form-group">
           <label for="oldAddress">集荷元住所（市区町村以下）<span class="asterisk">*</span></label>
           <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
-                 class="form-control" value="新宿区西新宿1-1-1"/>
+                 class="form-control" value="新宿区西新宿1-1-1" required/>
         </div>
         <div class="form-group">
           <label for="newPrefectureId">お届け先住所（都道府県）<span class="asterisk">*</span></label>
           <select id="newPrefectureId" name="newPrefectureId" class="form-control">
-            <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{newPrefectureId}">[[${prefecture.prefectureName}]]</option>
+            <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{newPrefectureId}" required>[[${prefecture.prefectureName}]]</option>
           </select>
         </div>
         <div class="form-group">
           <label for="newAddress">お届け先住所（市区町村以下）<span class="asterisk">*</span></label>
           <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
-                 value="札幌市南区1"/>
+                 value="札幌市南区1" required/>
         </div>
         <div class="form-group">
           <label for="schedule">引っ越し日時<span class="asterisk">*</span></label>
@@ -68,23 +68,40 @@
         </div>
       </fieldset>
       <fieldset>
-      <div class="sub-title">お荷物情報</div>
+        <div class="sub-title">お荷物情報</div>
+        <div class="caution-box">
+          <div class="caution">※お荷物の合計段ボール数が400個以上の場合は、簡易見積で正しく見積されない場合があります</div>
+          <table>
+            <tr>
+              <th class="table-title">家具</th> <th class="table-title">段ボールに換算した数</th>
+            </tr>
+            <tr>
+              <th class="table-text">ベッド</th> <th class="table-text">20</th>
+            </tr>
+            <tr>
+              <th class="table-text">自転車</th> <th class="table-text">15</th>
+            </tr>
+            <tr>
+              <th class="table-text">洗濯機</th> <th class="table-text">10</th>
+            </tr>
+          </table>
+        </div>
         <div class="form-group">
           <label for="box">段ボールの個数 <span class="asterisk">*</span></label>
-          <input type="text" id="box" name="box" th:field="*{box}" class="form-control" value="10"/>
+          <input type="text" id="box" name="box" th:field="*{box}" class="form-control" value="10" required/>
         </div>
         <div class="form-group">
           <label for="bed">ベッドの個数 <span class="asterisk">*</span></label>
-          <input type="text" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3"/>
+          <input type="text" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3" required/>
         </div>
         <div class="form-group">
           <label for="bicycle">自転車の個数 <span class="asterisk">*</span></label>
-          <input type="text" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1"/>
+          <input type="text" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1" required/>
         </div>
         <div class="form-group">
           <label for="washingMachine">洗濯機の個数 <span class="asterisk">*</span></label>
           <input type="text" id="washingMachine" name="washingMachine" th:field="*{washingMachine}" class="form-control"
-                 value="1"/>
+                 value="1" required/>
         </div>
         <div class="form-group">
           <label for="washingMachineInstallation">洗濯機の設置工事申し込み <span class="asterisk">*</span></label>

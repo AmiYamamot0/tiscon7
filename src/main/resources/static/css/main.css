@@ -10,6 +10,43 @@ body {
     color: #A9BC2E;
 }
 
+.error-text {
+    color: #BC412E;
+}
+
+.caution-box {
+    margin: 12px 0px 20px;
+}
+
+.caution {
+    margin: 12px 0px 12px;
+    color: #313131;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 21px;
+    font-family: "Roboto"
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 12px 0px 12px;
+}
+
+.table-title {
+  border: 1px solid #94A0AC;
+  padding: 5px 15px;
+  background-color: #E8EEBE;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-text {
+  border: 1px solid #94A0AC;
+  padding: 5px 15px;
+  background-color: white;
+  text-align: center;
+}
+
 .jumbotron {
     height: 40vh;
     background-image: url("../img/top.jpg");
