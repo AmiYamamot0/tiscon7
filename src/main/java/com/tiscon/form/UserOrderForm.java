@@ -5,6 +5,7 @@ import com.tiscon.validator.Numeric;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * 顧客が入力する見積もり情報を保持するクラス。
@@ -35,6 +36,9 @@ public class UserOrderForm {
 
     @NotBlank
     private String newAddress;
+
+    @NotNull
+    private Date schedule;
 
     @Numeric
     @NotBlank
@@ -109,6 +113,14 @@ public class UserOrderForm {
 
     public void setNewAddress(String newAddress) {
         this.newAddress = newAddress;
+    }
+
+    public Date getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(Date schedule) {
+        this.schedule = schedule;
     }
 
     public String getBox() {

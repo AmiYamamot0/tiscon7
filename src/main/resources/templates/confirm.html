@@ -84,6 +84,17 @@
           <td><span th:text="*{newAddress}"></span></td>
           <input type="hidden" name="newAddress" id="newAddress" th:value="*{newAddress}"/>
         </tr>
+        <tr>
+        <th>引っ越し予定日</th>
+          <td><span th:text="*{#dates.format(schedule, 'yyyy/MM/dd')}"></span></td>
+<!--          <td><span th:text="*{schedule}"></span></td>-->
+
+        <input type="hidden" name="schedule" id="schedule" th:value="*{#dates.format(schedule, 'yyyy/MM/dd')}"/>
+        </tr>
+        <!--<script>
+          console.log(schedule);
+        </script>-->
+
         </tbody>
       </table>
     </div>
